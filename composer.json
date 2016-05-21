@@ -1,0 +1,13 @@
+{
+    "require":
+    {
+
+    },
+    "autoload":
+    {
+        "psr-0":
+        {
+            "cmspp\\plugin": "src/"
+        }
+    }
+}
