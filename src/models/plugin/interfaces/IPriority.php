@@ -6,5 +6,5 @@ interface IPriority
     /**
      * @return int
      */
-    public function getPriority();
+    public function getPriority(): int;
 }

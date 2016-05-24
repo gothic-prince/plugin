@@ -1,8 +1,9 @@
 <?php
 namespace cmspp\plugin\models\plugin\interfaces;
-
-interface IPlugin extends IPriority, IPluginName
+use cmspp\events\models\events\interfaces\IEvent;
+use cmspp\events\models\events\interfaces\IWhereExecuted;
+use cmspp\serviceManager\interfaces\IServiceManager;
+interface IPlugin extends IPriority, IEvent
 {
-    public function run();
-    
+    public function run(IServiceManager $serviceManager, IWhereExecuted $whereExecuted);
 }
