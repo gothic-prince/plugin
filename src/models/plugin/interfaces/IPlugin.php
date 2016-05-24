@@ -1,9 +1,20 @@
 <?php
 namespace cmspp\plugin\models\plugin\interfaces;
 use cmspp\events\models\events\interfaces\IEvent;
-use cmspp\events\models\events\interfaces\IWhereExecuted;
-use cmspp\serviceManager\interfaces\IServiceManager;
+
+/**
+ * Interface IPlugin
+ * Все плагины - есть события. Каждый плагин, может вещать или удалять события на другие плагины. А возможно даже, может решать, быть или не быть видным для определённого события.
+ * @see IBehavior::onAdd
+ * @see IBehavior::onRemove
+ * @see IBehavior::onHas
+ * @see IBehavior::onGet
+ *
+ * Когда плагин запускается, то запускаются и те плагины и события, которые отслеживают его.
+ * В итоге, - цепная реакция. Каждый плагин, занимается своими делами.
+ * @package cmspp\plugin\models\plugin\interfaces
+ */
 interface IPlugin extends IPriority, IEvent
 {
-    public function run(IServiceManager $serviceManager, IWhereExecuted $whereExecuted);
+
 }
