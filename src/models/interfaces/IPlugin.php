@@ -1,5 +1,5 @@
 <?php
-namespace cmspp\plugin\models\plugin\interfaces;
+namespace cmspp\plugin\models\interfaces;
 use cmspp\events\models\events\interfaces\IEvent;
 
 /**
