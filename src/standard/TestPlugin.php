@@ -3,7 +3,7 @@ namespace cmspp\plugin\standard;
 
 
 use cmspp\events\models\events\interfaces\IEvent;
-use cmspp\plugin\models\plugin\interfaces\IPlugin;
+use cmspp\plugin\models\interfaces\IPlugin;
 use cmspp\serviceManager\interfaces\Service\IServiceControl;
 use cmspp\serviceManager\interfaces\Service\IServiceManager;
 

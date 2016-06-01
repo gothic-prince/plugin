@@ -18,7 +18,7 @@ class StartPlugin implements IPlugin
     public function run(IServiceManager $serviceManager, IServiceControl $serviceControl): bool
     {
         echo "RUN: startPlugin\n";
-        return true;
+        return false;
     }
 
     /**
