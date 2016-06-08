@@ -1,11 +1,13 @@
 <?php
 namespace cmspp\plugin\standard;
+
+
 use cmspp\events\models\events\interfaces\IEvent;
 use cmspp\plugin\models\interfaces\IPlugin;
-use cmspp\serviceManager\interfaces\Service\IServiceControl;
+use cmspp\serviceManager\interfaces\Service\IControlManager;
 use cmspp\serviceManager\interfaces\Service\IServiceManager;
 
-class StartPlugin implements IPlugin
+class TestPlugin implements IPlugin
 {
     /**
      * @param IServiceManager $serviceManager
@@ -15,12 +17,11 @@ class StartPlugin implements IPlugin
      *
      * @return IEvent[]
      */
-    public function run(IServiceManager $serviceManager, IServiceControl $serviceControl): bool
+    public function run(IServiceManager $serviceManager, IControlManager $serviceControl): bool
     {
-        echo "RUN: startPlugin\n";
+        echo "RUN: testPlugin\n";
         return false;
     }
-
     /**
      * @return int
      */
@@ -36,11 +37,11 @@ class StartPlugin implements IPlugin
 
     public function getName(): string
     {
-        return "Start";
+        return "test";
     }
 
     public function init(IServiceManager $serviceManager)
     {
-        echo "INIT: startPlugin\n";
+        echo "INIT: testPlugin\n";
     }
 }
