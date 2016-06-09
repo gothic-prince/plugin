@@ -1,11 +1,12 @@
 <?php
-namespace cmspp\plugin\standard;
-use cmspp\events\models\events\interfaces\IEvent;
-use cmspp\plugin\models\interfaces\IPlugin;
+namespace cmspp\plugin\models\EmptyPlugins;
+
+use cmspp\events\interfaces\IEvent;
+use cmspp\plugin\interfaces\IPlugin;
 use cmspp\serviceManager\interfaces\Service\IControlManager;
 use cmspp\serviceManager\interfaces\Service\IServiceManager;
 
-class StartPlugin implements IPlugin
+class EmptyThirdPlugin implements IPlugin
 {
     /**
      * @param IServiceManager $serviceManager
@@ -17,10 +18,9 @@ class StartPlugin implements IPlugin
      */
     public function run(IServiceManager $serviceManager, IControlManager $serviceControl): bool
     {
-        echo "RUN: startPlugin\n";
+        echo "RUN: OtherPlugin\n";
         return true;
     }
-
     /**
      * @return int
      */
@@ -36,11 +36,11 @@ class StartPlugin implements IPlugin
 
     public function getName(): string
     {
-        return "Start";
+        return "Other";
     }
 
     public function init(IServiceManager $serviceManager)
     {
-        echo "INIT: startPlugin\n";
+        echo "INIT: OtherPlugin\n";
     }
 }

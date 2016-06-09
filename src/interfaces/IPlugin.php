@@ -1,6 +1,6 @@
 <?php
-namespace cmspp\plugin\models\interfaces;
-use cmspp\events\models\events\interfaces\IEvent;
+namespace cmspp\plugin\interfaces;
+use cmspp\events\interfaces\IEvent;
 
 /**
  * Interface IPlugin
