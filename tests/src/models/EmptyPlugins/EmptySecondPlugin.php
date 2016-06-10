@@ -1,9 +1,10 @@
 <?php
 namespace cmspp\plugin\models\EmptyPlugins;
-use cmspp\events\events\interfaces\IEvent;
+use cmspp\events\interfaces\IEvent;
 use cmspp\plugin\interfaces\IPlugin;
 use cmspp\serviceManager\interfaces\Service\IControlManager;
 use cmspp\serviceManager\interfaces\Service\IServiceManager;
+use cmspp\serviceManager\models\CounterServise\CounterService;
 
 class EmptySecondPlugin implements IPlugin
 {
@@ -17,6 +18,9 @@ class EmptySecondPlugin implements IPlugin
      */
     public function run(IServiceManager $serviceManager, IControlManager $serviceControl): bool
     {
+        $counterService = $serviceManager->get("CounterService");
+        if ($counterService instanceof CounterService)
+            $counterService->addPlugin($this);
         echo "RUN: testPlugin\n";
         return false;
     }

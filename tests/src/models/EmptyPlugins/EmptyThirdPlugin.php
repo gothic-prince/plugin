@@ -5,6 +5,7 @@ use cmspp\events\interfaces\IEvent;
 use cmspp\plugin\interfaces\IPlugin;
 use cmspp\serviceManager\interfaces\Service\IControlManager;
 use cmspp\serviceManager\interfaces\Service\IServiceManager;
+use cmspp\serviceManager\models\CounterServise\CounterService;
 
 class EmptyThirdPlugin implements IPlugin
 {
@@ -18,6 +19,9 @@ class EmptyThirdPlugin implements IPlugin
      */
     public function run(IServiceManager $serviceManager, IControlManager $serviceControl): bool
     {
+        $counterService = $serviceManager->get("CounterService");
+        if ($counterService instanceof CounterService)
+            $counterService->addPlugin($this);
         echo "RUN: OtherPlugin\n";
         return true;
     }
