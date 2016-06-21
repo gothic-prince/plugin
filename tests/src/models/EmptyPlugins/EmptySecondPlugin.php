@@ -2,9 +2,9 @@
 namespace cmspp\plugin\models\EmptyPlugins;
 use cmspp\events\interfaces\IEvent;
 use cmspp\plugin\interfaces\IPlugin;
-use cmspp\serviceManager\interfaces\Service\IControlManager;
-use cmspp\serviceManager\interfaces\Service\IServiceManager;
-use cmspp\serviceManager\models\CounterServise\CounterService;
+use cmspp\managers\interfaces\Service\IControlManager;
+use cmspp\managers\interfaces\Service\IServiceManager;
+use cmspp\managers\models\CounterServise\CounterService;
 
 class EmptySecondPlugin implements IPlugin
 {
